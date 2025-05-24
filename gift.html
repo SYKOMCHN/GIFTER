@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURPRISE!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <canvas class = "the_canvas" id = 'the_canvas' width = "1024" height = "540"></canvas>
+   <br>
+   <br>
+   <a href="BleachWallpaper.png" download="BleachWallpaper.png">
+   <button id="button">DOWNLOAD</button>
+   </a>
+</body>
+
+<style>
+  body {
+        background-color: rgb(245, 203, 216);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+        margin: 0;
+        
+    }
+    
+
+.the_canvas {
+    border: 10px solid rgb(102, 27, 77);
+    background-color: rgb(247, 230, 224);
+    border-radius: 5%;
+    
+    }
+
+
+#button {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: rgb(238, 217, 224);
+    border-radius: 5px;  
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    
+
+}
+
+#button:hover {
+    background-color: hsl(320, 58%, 25%);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+}
+    
+</style>
+
+<script>
+
+const canvas = document.getElementById('the_canvas');
+const cntxt = canvas.getContext('2d');
+
+const img = new Image();
+img.src = 'BleachWallpaper.png';
+
+img.onload = function() {
+
+    cntxt.drawImage(img, 0 ,0 ,canvas.width, canvas.height);
+};
+
+</script>
+</html>

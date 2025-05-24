@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFT</title>
+</head>
+
+<body>
+    <div class = "gift_box" id = gift_box></div>
+</body>
+
+<style>
+    body {
+        background-color: rgb(245, 203, 216);
+        overflow: hidden;
+    }
+
+    .gift_box {
+        display: flex;
+        justify-content: center;
+        padding-top: 20%
+        
+    }
+    
+    .gift_box :hover{
+        cursor: pointer;
+    }
+
+    .gift_box   :active{
+        transform: scale(0.9);
+        transition: transform 0.1s;
+    }
+    
+</style>
+
+<script>
+
+    clickCounter = 0;
+    
+
+    img = document.createElement('img');
+    img2 = document.createElement('img2');
+
+    img.src = 'created_assets/giftbox2.png';
+    img.style.width = '200px';
+    img.style.height = '200px';
+
+
+    document.getElementById('gift_box').appendChild(img);
+    document.getElementById('gift_box').addEventListener('click', function() {
+        clickCounter++;
+
+       
+            if (clickCounter == 3) {img.src = 'created_assets/giftbox2-1.png';}
+            else if (clickCounter == 6) {img.src = 'created_assets/giftbox2-2.png';}
+            else if (clickCounter == 9 ) {
+                img.src = 'created_assets/giftbox2-3.png';
+                img.style.opacity = 1;
+                img.style.transition = 'opacity 0.5s ease-in-out';
+                img.style.opacity = 0; 
+            }  
+            else if (clickCounter == 10) {
+                img.src = 'created_assets/giftbox2-4.png';
+                img.style.opacity = 1;
+            }
+            else if (clickCounter >= 11) {
+                newPage();
+            }
+        });
+    
+    function newPage(){
+        window.location.href = "gift.html";
+    }
+     
+
+</script>
+</html>
