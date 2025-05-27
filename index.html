@@ -8,12 +8,13 @@
 
 <body>
     <div class = "gift_box" id = gift_box></div>
+    <audio id="audio" src="knock.mp3"></audio>
 </body>
 
 <style>
     body {
         background-color: rgb(245, 203, 216);
-        overflow: hidden;
+
     }
 
     .gift_box {
@@ -40,8 +41,8 @@
     
 
     img = document.createElement('img');
-    img2 = document.createElement('img2');
-
+   
+    
     img.src = 'created_assets/giftbox2.png';
     img.style.width = '200px';
     img.style.height = '200px';
@@ -50,8 +51,11 @@
     document.getElementById('gift_box').appendChild(img);
     document.getElementById('gift_box').addEventListener('click', function() {
         clickCounter++;
+            
+            if (clickCounter < 10){
+            document.getElementById('audio').play();
+            }
 
-       
             if (clickCounter == 3) {img.src = 'created_assets/giftbox2-1.png';}
             else if (clickCounter == 6) {img.src = 'created_assets/giftbox2-2.png';}
             else if (clickCounter == 9 ) {
